@@ -45,7 +45,7 @@ class Logincontroller extends Controller
             return redirect()->intended(route('actualizarperfil'));
 
         }else{
-            return redirect('login');
+            return redirect('Iniciar_Sesion');
         }
 
     }
@@ -57,7 +57,7 @@ class Logincontroller extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect(route('login'));
+        return redirect(route('Iniciar_Sesion'));
 
 
     }

@@ -34,10 +34,10 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('login')}}">login</a>
+          <a class="nav-link" href="{{route('Iniciar_Sesion')}}">login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="{{route('citas.index')}}">Citas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
