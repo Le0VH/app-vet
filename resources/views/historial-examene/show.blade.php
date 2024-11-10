@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $inventarioInsumo->name ?? __('Show') . " " . __('Inventario Insumo') }}
+    {{ $historialExamene->name ?? __('Show') . " " . __('Historial Examene') }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Inventario Insumo</span>
+                            <span class="card-title">{{ __('Show') }} Historial Examene</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('inventario-insumos.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('historial-examenes.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
@@ -22,35 +22,35 @@
                         
                                 <div class="form-group mb-2 mb20">
                                     <strong>Id:</strong>
-                                    {{ $inventarioInsumo->ID }}
+                                    {{ $historialExamene->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Nombre:</strong>
-                                    {{ $inventarioInsumo->Nombre }}
+                                    <strong>Fecha:</strong>
+                                    {{ $historialExamene->fecha }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Descripcion:</strong>
-                                    {{ $inventarioInsumo->Descripcion }}
+                                    <strong>Tipo Examen:</strong>
+                                    {{ $historialExamene->Tipo_Examen }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Cantidad:</strong>
-                                    {{ $inventarioInsumo->Cantidad }}
+                                    <strong>Resultado:</strong>
+                                    {{ $historialExamene->Resultado }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Proveedor:</strong>
-                                    {{ $inventarioInsumo->Proveedor }}
+                                    <strong>Observaciones:</strong>
+                                    {{ $historialExamene->Observaciones }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Fecha Ingreso:</strong>
-                                    {{ $inventarioInsumo->Fecha_Ingreso }}
+                                    <strong>Veterinario Id:</strong>
+                                    {{ $historialExamene->veterinario_id }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Fecha Caducidad:</strong>
-                                    {{ $inventarioInsumo->Fecha_Caducidad }}
+                                    <strong>Mascota Id:</strong>
+                                    {{ $historialExamene->mascota_id }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Costo Monetareo:</strong>
-                                    {{ $inventarioInsumo->Costo_Monetareo }}
+                                    <strong>Citas Id:</strong>
+                                    {{ $historialExamene->citas_id }}
                                 </div>
 
                     </div>

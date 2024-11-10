@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Veterinario
  *
- * @property $Veterinario_ID
+ * @property $ID
  * @property $Nombre_Veterinario
  * @property $Apellido_Veterinario
  * @property $Especialialidad_Veterinario
@@ -39,7 +39,7 @@ class Veterinario extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Veterinario_ID', 'Nombre_Veterinario', 'Apellido_Veterinario', 'Especialialidad_Veterinario', 'Direccion_Veterinario', 'telefono_Veterinario', 'Contacto_Emergencia_Vet', 'Email_Veterinario', 'Clinicas'];
+    protected $fillable = ['ID', 'Nombre_Veterinario', 'Apellido_Veterinario', 'Especialialidad_Veterinario', 'Direccion_Veterinario', 'telefono_Veterinario', 'Contacto_Emergencia_Vet', 'Email_Veterinario', 'Clinicas'];
 
 
     /**
@@ -47,7 +47,7 @@ class Veterinario extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'Veterinario_ID', 'veterinario_ID');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'veterinario_ID');
     }
     
     /**
@@ -55,7 +55,7 @@ class Veterinario extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\Cita::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -63,7 +63,7 @@ class Veterinario extends Model
      */
     public function historialExamenes()
     {
-        return $this->hasMany(\App\Models\HistorialExamene::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\HistorialExamene::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -71,7 +71,7 @@ class Veterinario extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -79,7 +79,7 @@ class Veterinario extends Model
      */
     public function mascotas()
     {
-        return $this->hasMany(\App\Models\Mascota::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\Mascota::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -87,7 +87,7 @@ class Veterinario extends Model
      */
     public function notificaciones()
     {
-        return $this->hasMany(\App\Models\Notificacione::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\Notificacione::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -95,7 +95,7 @@ class Veterinario extends Model
      */
     public function plantillaNotificacions()
     {
-        return $this->hasMany(\App\Models\PlantillaNotificacion::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\PlantillaNotificacion::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -103,7 +103,7 @@ class Veterinario extends Model
      */
     public function tratamientos()
     {
-        return $this->hasMany(\App\Models\Tratamiento::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\Tratamiento::class, 'ID', 'veterinario_id');
     }
     
     /**
@@ -111,7 +111,7 @@ class Veterinario extends Model
      */
     public function vacunas()
     {
-        return $this->hasMany(\App\Models\Vacuna::class, 'Veterinario_ID', 'veterinario_id');
+        return $this->hasMany(\App\Models\Vacuna::class, 'ID', 'veterinario_id');
     }
     
 }

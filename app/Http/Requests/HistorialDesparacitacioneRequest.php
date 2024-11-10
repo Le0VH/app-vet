@@ -22,7 +22,7 @@ class HistorialDesparacitacioneRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Desparacitacion_ID' => 'required',
+			'ID' => 'required',
 			'Observaciones' => 'string',
         ];
     }

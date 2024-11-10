@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="citas__i_d" class="form-label">{{ __('Citas Id') }}</label>
-            <input type="text" name="Citas_ID" class="form-control @error('Citas_ID') is-invalid @enderror" value="{{ old('Citas_ID', $cita?->Citas_ID) }}" id="citas__i_d" placeholder="Citas Id">
-            {!! $errors->first('Citas_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $cita?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha__cita" class="form-label">{{ __('Fecha Cita') }}</label>

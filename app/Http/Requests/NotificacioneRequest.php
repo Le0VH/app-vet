@@ -22,7 +22,7 @@ class NotificacioneRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Notificaciones_ID' => 'required',
+			'ID' => 'required',
 			'Tipo_Notificacion' => 'string',
 			'Mensaje' => 'string',
 			'Estado_Mensaje' => 'string',

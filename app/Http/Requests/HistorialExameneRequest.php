@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SeguimientoRequest extends FormRequest
+class HistorialExameneRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,9 @@ class SeguimientoRequest extends FormRequest
     {
         return [
 			'ID' => 'required',
-			'peso' => 'string',
-			'observaciones' => 'string',
+			'Tipo_Examen' => 'string',
+			'Resultado' => 'string',
+			'Observaciones' => 'string',
         ];
     }
 }

@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Pantilla Id</th>
+									<th >Id</th>
 									<th >Nombre</th>
 									<th >Tipo Notificacion</th>
 									<th >Contenido</th>
@@ -52,7 +52,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $plantillaNotificacion->Pantilla_ID }}</td>
+										<td >{{ $plantillaNotificacion->ID }}</td>
 										<td >{{ $plantillaNotificacion->Nombre }}</td>
 										<td >{{ $plantillaNotificacion->Tipo_Notificacion }}</td>
 										<td >{{ $plantillaNotificacion->Contenido }}</td>

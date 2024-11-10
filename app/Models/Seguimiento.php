@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Seguimiento
  *
- * @property $seguimiento_id
+ * @property $ID
  * @property $fecha
  * @property $peso
  * @property $observaciones
@@ -29,7 +29,7 @@ class Seguimiento extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['seguimiento_id', 'fecha', 'peso', 'observaciones', 'mascota_id'];
+    protected $fillable = ['ID', 'fecha', 'peso', 'observaciones', 'mascota_id'];
 
 
     /**
@@ -37,7 +37,7 @@ class Seguimiento extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'Mascota_ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
     }
     
     /**
@@ -45,7 +45,7 @@ class Seguimiento extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'seguimiento_id', 'seguimiento_id');
+        return $this->hasMany(\App\Models\Cita::class, 'ID', 'seguimiento_id');
     }
     
     /**
@@ -53,7 +53,7 @@ class Seguimiento extends Model
      */
     public function historialDesparacitaciones()
     {
-        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'seguimiento_id', 'seguimiento_id');
+        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'ID', 'seguimiento_id');
     }
     
 }

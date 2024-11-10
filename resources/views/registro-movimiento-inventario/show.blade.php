@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Movimiento Id:</strong>
-                                    {{ $registroMovimientoInventario->Movimiento_ID }}
+                                    <strong>Id:</strong>
+                                    {{ $registroMovimientoInventario->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Fecha:</strong>

@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Desparacitacion Id</th>
+									<th >Id</th>
 									<th >Fecha</th>
 									<th >Observaciones</th>
 									<th >Movimiento Id</th>
@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $historialDesparacitacione->Desparacitacion_ID }}</td>
+										<td >{{ $historialDesparacitacione->ID }}</td>
 										<td >{{ $historialDesparacitacione->Fecha }}</td>
 										<td >{{ $historialDesparacitacione->Observaciones }}</td>
 										<td >{{ $historialDesparacitacione->movimiento_id }}</td>

@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="historial__medico__i_d" class="form-label">{{ __('Historial Medico Id') }}</label>
-            <input type="text" name="Historial_Medico_ID" class="form-control @error('Historial_Medico_ID') is-invalid @enderror" value="{{ old('Historial_Medico_ID', $historialMedico?->Historial_Medico_ID) }}" id="historial__medico__i_d" placeholder="Historial Medico Id">
-            {!! $errors->first('Historial_Medico_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $historialMedico?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha" class="form-label">{{ __('Fecha') }}</label>

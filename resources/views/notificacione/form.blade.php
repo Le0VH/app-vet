@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="notificaciones__i_d" class="form-label">{{ __('Notificaciones Id') }}</label>
-            <input type="text" name="Notificaciones_ID" class="form-control @error('Notificaciones_ID') is-invalid @enderror" value="{{ old('Notificaciones_ID', $notificacione?->Notificaciones_ID) }}" id="notificaciones__i_d" placeholder="Notificaciones Id">
-            {!! $errors->first('Notificaciones_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $notificacione?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="tipo__notificacion" class="form-label">{{ __('Tipo Notificacion') }}</label>

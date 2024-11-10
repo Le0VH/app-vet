@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Vacuna Id:</strong>
-                                    {{ $vacuna->Vacuna_ID }}
+                                    <strong>Id:</strong>
+                                    {{ $vacuna->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Nombre Vacuna:</strong>

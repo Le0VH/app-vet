@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class RegistroMovimientoInventario
  *
- * @property $Movimiento_ID
+ * @property $ID
  * @property $Fecha
  * @property $Cantidad
  * @property $Tipo_Movimiento
@@ -31,7 +31,7 @@ class RegistroMovimientoInventario extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Movimiento_ID', 'Fecha', 'Cantidad', 'Tipo_Movimiento', 'Descripcion', 'inventario_id'];
+    protected $fillable = ['ID', 'Fecha', 'Cantidad', 'Tipo_Movimiento', 'Descripcion', 'inventario_id'];
 
 
     /**
@@ -39,7 +39,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function inventarioInsumo()
     {
-        return $this->belongsTo(\App\Models\InventarioInsumo::class, 'inventario_id', 'Inventario_ID');
+        return $this->belongsTo(\App\Models\InventarioInsumo::class, 'inventario_id', 'ID');
     }
     
     /**
@@ -47,7 +47,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function historialDesparacitaciones()
     {
-        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'Movimiento_ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'ID', 'movimiento_id');
     }
     
     /**
@@ -55,7 +55,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Movimiento_ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'movimiento_id');
     }
     
     /**
@@ -63,7 +63,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function tratamientos()
     {
-        return $this->hasMany(\App\Models\Tratamiento::class, 'Movimiento_ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\Tratamiento::class, 'ID', 'movimiento_id');
     }
     
 }

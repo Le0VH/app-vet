@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class InventarioInsumo
  *
- * @property $Inventario_ID
+ * @property $ID
  * @property $Nombre
  * @property $Descripcion
  * @property $Cantidad
@@ -30,7 +30,7 @@ class InventarioInsumo extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Inventario_ID', 'Nombre', 'Descripcion', 'Cantidad', 'Proveedor', 'Fecha_Ingreso', 'Fecha_Caducidad', 'Costo_Monetareo'];
+    protected $fillable = ['ID', 'Nombre', 'Descripcion', 'Cantidad', 'Proveedor', 'Fecha_Ingreso', 'Fecha_Caducidad', 'Costo_Monetareo'];
 
 
     /**
@@ -38,7 +38,7 @@ class InventarioInsumo extends Model
      */
     public function registroMovimientoInventarios()
     {
-        return $this->hasMany(\App\Models\RegistroMovimientoInventario::class, 'Inventario_ID', 'inventario_id');
+        return $this->hasMany(\App\Models\RegistroMovimientoInventario::class, 'ID', 'inventario_id');
     }
     
 }

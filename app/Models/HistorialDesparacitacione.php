@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class HistorialDesparacitacione
  *
- * @property $Desparacitacion_ID
+ * @property $ID
  * @property $Fecha
  * @property $Observaciones
  * @property $movimiento_id
@@ -30,7 +30,7 @@ class HistorialDesparacitacione extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Desparacitacion_ID', 'Fecha', 'Observaciones', 'movimiento_id', 'seguimiento_id'];
+    protected $fillable = ['ID', 'Fecha', 'Observaciones', 'movimiento_id', 'seguimiento_id'];
 
 
     /**
@@ -38,7 +38,7 @@ class HistorialDesparacitacione extends Model
      */
     public function registroMovimientoInventario()
     {
-        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'Movimiento_ID');
+        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'ID');
     }
     
     /**
@@ -46,7 +46,7 @@ class HistorialDesparacitacione extends Model
      */
     public function seguimiento()
     {
-        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'seguimiento_id');
+        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'ID');
     }
     
     /**
@@ -54,7 +54,7 @@ class HistorialDesparacitacione extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Desparacitacion_ID', 'desparacitacion_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'desparacitacion_id');
     }
     
     /**
@@ -62,7 +62,7 @@ class HistorialDesparacitacione extends Model
      */
     public function mascotas()
     {
-        return $this->hasMany(\App\Models\Mascota::class, 'Desparacitacion_ID', 'desparacitaciones_id');
+        return $this->hasMany(\App\Models\Mascota::class, 'ID', 'desparacitaciones_id');
     }
     
 }

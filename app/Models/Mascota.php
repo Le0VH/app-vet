@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Mascota
  *
- * @property $Mascota_ID
+ * @property $ID
  * @property $Especie
  * @property $Raza
  * @property $Tipo_Pelaje
@@ -48,7 +48,7 @@ class Mascota extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Mascota_ID', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
+    protected $fillable = ['ID', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
 
 
     /**
@@ -56,7 +56,7 @@ class Mascota extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_medico_id', 'Historial_Medico_ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_medico_id', 'ID');
     }
     
     /**
@@ -64,7 +64,7 @@ class Mascota extends Model
      */
     public function historialDesparacitacione()
     {
-        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitaciones_id', 'Desparacitacion_ID');
+        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitaciones_id', 'ID');
     }
     
     /**
@@ -72,7 +72,7 @@ class Mascota extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'Veterinario_ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
     }
     
     /**
@@ -88,7 +88,7 @@ class Mascota extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'mascota_id');
     }
     
     /**
@@ -96,7 +96,7 @@ class Mascota extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Cita::class, 'ID', 'mascota_id');
     }
     
     /**
@@ -104,7 +104,7 @@ class Mascota extends Model
      */
     public function historialExamenes()
     {
-        return $this->hasMany(\App\Models\HistorialExamene::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\HistorialExamene::class, 'ID', 'mascota_id');
     }
     
     /**
@@ -112,7 +112,7 @@ class Mascota extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'mascota_id');
     }
     
     /**
@@ -120,7 +120,7 @@ class Mascota extends Model
      */
     public function seguimientos()
     {
-        return $this->hasMany(\App\Models\Seguimiento::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Seguimiento::class, 'ID', 'mascota_id');
     }
     
     /**
@@ -128,7 +128,7 @@ class Mascota extends Model
      */
     public function vacunas()
     {
-        return $this->hasMany(\App\Models\Vacuna::class, 'Mascota_ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Vacuna::class, 'ID', 'mascota_id');
     }
     
 }

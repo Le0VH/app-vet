@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="desparacitacion__i_d" class="form-label">{{ __('Desparacitacion Id') }}</label>
-            <input type="text" name="Desparacitacion_ID" class="form-control @error('Desparacitacion_ID') is-invalid @enderror" value="{{ old('Desparacitacion_ID', $historialDesparacitacione?->Desparacitacion_ID) }}" id="desparacitacion__i_d" placeholder="Desparacitacion Id">
-            {!! $errors->first('Desparacitacion_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $historialDesparacitacione?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha" class="form-label">{{ __('Fecha') }}</label>

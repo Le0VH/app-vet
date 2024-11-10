@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Veterinario Id</th>
+									<th >Id</th>
 									<th >Nombre Veterinario</th>
 									<th >Apellido Veterinario</th>
 									<th >Especialialidad Veterinario</th>
@@ -54,7 +54,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $veterinario->Veterinario_ID }}</td>
+										<td >{{ $veterinario->ID }}</td>
 										<td >{{ $veterinario->Nombre_Veterinario }}</td>
 										<td >{{ $veterinario->Apellido_Veterinario }}</td>
 										<td >{{ $veterinario->Especialialidad_Veterinario }}</td>

@@ -5,23 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Tratamiento
+ * Class HistorialExamene
  *
  * @property $ID
- * @property $Fecha_Inicio
- * @property $Fecha_Termino
- * @property $Descripcion_Tratamiento
+ * @property $fecha
+ * @property $Tipo_Examen
+ * @property $Resultado
  * @property $Observaciones
  * @property $veterinario_id
- * @property $movimiento_id
+ * @property $mascota_id
+ * @property $citas_id
  *
  * @property Veterinario $veterinario
- * @property RegistroMovimientoInventario $registroMovimientoInventario
+ * @property Mascota $mascota
+ * @property Cita $cita
  * @property HistorialMedico[] $historialMedicos
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Tratamiento extends Model
+class HistorialExamene extends Model
 {
     
     protected $perPage = 20;
@@ -31,7 +33,7 @@ class Tratamiento extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Fecha_Inicio', 'Fecha_Termino', 'Descripcion_Tratamiento', 'Observaciones', 'veterinario_id', 'movimiento_id'];
+    protected $fillable = ['ID', 'fecha', 'Tipo_Examen', 'Resultado', 'Observaciones', 'veterinario_id', 'mascota_id', 'citas_id'];
 
 
     /**
@@ -45,9 +47,17 @@ class Tratamiento extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function registroMovimientoInventario()
+    public function mascota()
     {
-        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function cita()
+    {
+        return $this->belongsTo(\App\Models\Cita::class, 'citas_id', 'ID');
     }
     
     /**
@@ -55,7 +65,7 @@ class Tratamiento extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'tratamiento_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'examen_id');
     }
     
 }

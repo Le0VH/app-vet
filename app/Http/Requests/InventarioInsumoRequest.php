@@ -22,7 +22,7 @@ class InventarioInsumoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Inventario_ID' => 'required',
+			'ID' => 'required',
 			'Nombre' => 'string',
 			'Descripcion' => 'string',
 			'Proveedor' => 'string',

@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Mascota Id</th>
+									<th >Id</th>
 									<th >Especie</th>
 									<th >Raza</th>
 									<th >Tipo Pelaje</th>
@@ -62,7 +62,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $mascota->Mascota_ID }}</td>
+										<td >{{ $mascota->ID }}</td>
 										<td >{{ $mascota->Especie }}</td>
 										<td >{{ $mascota->Raza }}</td>
 										<td >{{ $mascota->Tipo_Pelaje }}</td>

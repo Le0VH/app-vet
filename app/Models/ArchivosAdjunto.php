@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class ArchivosAdjunto
  *
- * @property $Archivos_ID
+ * @property $ID
  * @property $Nombre_Archivo
  * @property $Tipo_Archivo
  * @property $Fecha_Archivo
@@ -36,7 +36,7 @@ class ArchivosAdjunto extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Archivos_ID', 'Nombre_Archivo', 'Tipo_Archivo', 'Fecha_Archivo', 'Descripcion', 'veterinario_ID', 'Historial_med_ID', 'vacunas_id', 'mascota_id', 'usuario_id'];
+    protected $fillable = ['ID', 'Nombre_Archivo', 'Tipo_Archivo', 'Fecha_Archivo', 'Descripcion', 'veterinario_ID', 'Historial_med_ID', 'vacunas_id', 'mascota_id', 'usuario_id'];
 
 
     /**
@@ -44,7 +44,7 @@ class ArchivosAdjunto extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_ID', 'Veterinario_ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_ID', 'ID');
     }
     
     /**
@@ -52,7 +52,7 @@ class ArchivosAdjunto extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'Historial_med_ID', 'Historial_Medico_ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'Historial_med_ID', 'ID');
     }
     
     /**
@@ -60,7 +60,7 @@ class ArchivosAdjunto extends Model
      */
     public function vacuna()
     {
-        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'Vacuna_ID');
+        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'ID');
     }
     
     /**
@@ -68,7 +68,7 @@ class ArchivosAdjunto extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'Mascota_ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
     }
     
     /**

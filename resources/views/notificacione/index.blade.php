@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Notificaciones Id</th>
+									<th >Id</th>
 									<th >Tipo Notificacion</th>
 									<th >Fecha</th>
 									<th >Hora</th>
@@ -53,7 +53,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $notificacione->Notificaciones_ID }}</td>
+										<td >{{ $notificacione->ID }}</td>
 										<td >{{ $notificacione->Tipo_Notificacion }}</td>
 										<td >{{ $notificacione->Fecha }}</td>
 										<td >{{ $notificacione->Hora }}</td>

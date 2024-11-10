@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Inventario Insumos
+    Historial Examenes
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Inventario Insumos') }}
+                                {{ __('Historial Examenes') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('inventario-insumos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('historial-examenes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -37,35 +37,35 @@
                                         <th>No</th>
                                         
 									<th >Id</th>
-									<th >Nombre</th>
-									<th >Descripcion</th>
-									<th >Cantidad</th>
-									<th >Proveedor</th>
-									<th >Fecha Ingreso</th>
-									<th >Fecha Caducidad</th>
-									<th >Costo Monetareo</th>
+									<th >Fecha</th>
+									<th >Tipo Examen</th>
+									<th >Resultado</th>
+									<th >Observaciones</th>
+									<th >Veterinario Id</th>
+									<th >Mascota Id</th>
+									<th >Citas Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($inventarioInsumos as $inventarioInsumo)
+                                    @foreach ($historialExamenes as $historialExamene)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $inventarioInsumo->ID }}</td>
-										<td >{{ $inventarioInsumo->Nombre }}</td>
-										<td >{{ $inventarioInsumo->Descripcion }}</td>
-										<td >{{ $inventarioInsumo->Cantidad }}</td>
-										<td >{{ $inventarioInsumo->Proveedor }}</td>
-										<td >{{ $inventarioInsumo->Fecha_Ingreso }}</td>
-										<td >{{ $inventarioInsumo->Fecha_Caducidad }}</td>
-										<td >{{ $inventarioInsumo->Costo_Monetareo }}</td>
+										<td >{{ $historialExamene->ID }}</td>
+										<td >{{ $historialExamene->fecha }}</td>
+										<td >{{ $historialExamene->Tipo_Examen }}</td>
+										<td >{{ $historialExamene->Resultado }}</td>
+										<td >{{ $historialExamene->Observaciones }}</td>
+										<td >{{ $historialExamene->veterinario_id }}</td>
+										<td >{{ $historialExamene->mascota_id }}</td>
+										<td >{{ $historialExamene->citas_id }}</td>
 
                                             <td>
-                                                <form action="{{ route('inventario-insumos.destroy', $inventarioInsumo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('inventario-insumos.show', $inventarioInsumo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('inventario-insumos.edit', $inventarioInsumo->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('historial-examenes.destroy', $historialExamene->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('historial-examenes.show', $historialExamene->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('historial-examenes.edit', $historialExamene->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $inventarioInsumos->withQueryString()->links() !!}
+                {!! $historialExamenes->withQueryString()->links() !!}
             </div>
         </div>
     </div>

@@ -22,7 +22,7 @@ class TratamientoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Tratamiento_ID' => 'required',
+			'ID' => 'required',
 			'Descripcion_Tratamiento' => 'string',
 			'Observaciones' => 'string',
         ];

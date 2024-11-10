@@ -22,7 +22,7 @@ class VeterinarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Veterinario_ID' => 'required',
+			'ID' => 'required',
 			'Nombre_Veterinario' => 'string',
 			'Apellido_Veterinario' => 'string',
 			'Especialialidad_Veterinario' => 'string',

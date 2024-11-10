@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Desparacitacion Id:</strong>
-                                    {{ $historialDesparacitacione->Desparacitacion_ID }}
+                                    <strong>Id:</strong>
+                                    {{ $historialDesparacitacione->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Fecha:</strong>

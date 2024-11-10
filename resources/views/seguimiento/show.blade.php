@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Seguimiento Id:</strong>
-                                    {{ $seguimiento->seguimiento_id }}
+                                    <strong>Id:</strong>
+                                    {{ $seguimiento->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Fecha:</strong>

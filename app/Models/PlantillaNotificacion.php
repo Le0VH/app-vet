@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class PlantillaNotificacion
  *
- * @property $Pantilla_ID
+ * @property $ID
  * @property $Nombre
  * @property $Tipo_Notificacion
  * @property $Contenido
@@ -31,7 +31,7 @@ class PlantillaNotificacion extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Pantilla_ID', 'Nombre', 'Tipo_Notificacion', 'Contenido', 'notificacion_id', 'veterinario_id', 'usuario_id'];
+    protected $fillable = ['ID', 'Nombre', 'Tipo_Notificacion', 'Contenido', 'notificacion_id', 'veterinario_id', 'usuario_id'];
 
 
     /**
@@ -39,7 +39,7 @@ class PlantillaNotificacion extends Model
      */
     public function notificacione()
     {
-        return $this->belongsTo(\App\Models\Notificacione::class, 'notificacion_id', 'Notificaciones_ID');
+        return $this->belongsTo(\App\Models\Notificacione::class, 'notificacion_id', 'ID');
     }
     
     /**
@@ -47,7 +47,7 @@ class PlantillaNotificacion extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'Veterinario_ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
     }
     
     /**

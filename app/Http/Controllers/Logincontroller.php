@@ -78,7 +78,7 @@ class Logincontroller extends Controller
     public function changePassword(Request $request){    
         
         $user           = Auth::user();
-        $userId         = $user->id;
+        $userID         = $user->ID;
         $username       = $user->name;
         $userEmail      = $user->email;
         $userPassword   = $user->password;
@@ -104,7 +104,7 @@ class Logincontroller extends Controller
                         if(strlen($NewPass) >= 6){
                             $user->newpassword = Hash::make($request->newpassword);
                             $sqlBD = DB::table('users')
-                                  ->where('id', $user->id)
+                                  ->where('ID', $user->ID)
                                   ->update(['password' => $user->newpassword, 'name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rol' => $rol]);
                     
                             return redirect()->back()->with('updateClave','La clave fue cambiada correctamente.');
@@ -128,7 +128,7 @@ class Logincontroller extends Controller
             $phone      = $request->phone;
             $rol        = $request->rol;
             $sqlBDUpdateName = DB::table('users')
-                            ->where('id', $user->id)
+                            ->where('ID', $user->ID)
                             ->update(['name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rol' => $rol]);
             return redirect()->back()->with('name','Datos actualizados correctamente.');;
 

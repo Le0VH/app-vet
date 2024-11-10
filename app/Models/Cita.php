@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Cita
  *
- * @property $Citas_ID
+ * @property $ID
  * @property $Fecha_Cita
  * @property $Hora_Cita
  * @property $Motivo_Cita
@@ -39,7 +39,7 @@ class Cita extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Citas_ID', 'Fecha_Cita', 'Hora_Cita', 'Motivo_Cita', 'Estado_Cita', 'Tipo_De_Pago', 'mascota_id', 'historial_med_id', 'usuario_id', 'veterinario_id', 'seguimiento_id'];
+    protected $fillable = ['ID', 'Fecha_Cita', 'Hora_Cita', 'Motivo_Cita', 'Estado_Cita', 'Tipo_De_Pago', 'mascota_id', 'historial_med_id', 'usuario_id', 'veterinario_id', 'seguimiento_id'];
 
 
     /**
@@ -47,7 +47,7 @@ class Cita extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'Mascota_ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
     }
     
     /**
@@ -55,7 +55,7 @@ class Cita extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_med_id', 'Historial_Medico_ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_med_id', 'ID');
     }
     
     /**
@@ -63,7 +63,7 @@ class Cita extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'Veterinario_ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
     }
     
     /**
@@ -71,7 +71,7 @@ class Cita extends Model
      */
     public function seguimiento()
     {
-        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'seguimiento_id');
+        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'ID');
     }
     
     /**
@@ -87,7 +87,7 @@ class Cita extends Model
      */
     public function historialExamenes()
     {
-        return $this->hasMany(\App\Models\HistorialExamene::class, 'Citas_ID', 'citas_id');
+        return $this->hasMany(\App\Models\HistorialExamene::class, 'ID', 'citas_id');
     }
     
     /**
@@ -95,7 +95,7 @@ class Cita extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Citas_ID', 'citas_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'citas_id');
     }
     
 }

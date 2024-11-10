@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Tratamiento Id</th>
+									<th >Id</th>
 									<th >Fecha Inicio</th>
 									<th >Fecha Termino</th>
 									<th >Descripcion Tratamiento</th>
@@ -52,7 +52,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $tratamiento->Tratamiento_ID }}</td>
+										<td >{{ $tratamiento->ID }}</td>
 										<td >{{ $tratamiento->Fecha_Inicio }}</td>
 										<td >{{ $tratamiento->Fecha_Termino }}</td>
 										<td >{{ $tratamiento->Descripcion_Tratamiento }}</td>

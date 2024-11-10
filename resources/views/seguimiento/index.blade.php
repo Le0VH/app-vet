@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Seguimiento Id</th>
+									<th >Id</th>
 									<th >Fecha</th>
 									<th >Peso</th>
 									<th >Observaciones</th>
@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $seguimiento->seguimiento_id }}</td>
+										<td >{{ $seguimiento->ID }}</td>
 										<td >{{ $seguimiento->fecha }}</td>
 										<td >{{ $seguimiento->peso }}</td>
 										<td >{{ $seguimiento->observaciones }}</td>

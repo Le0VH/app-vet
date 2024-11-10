@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Vacuna
  *
- * @property $Vacuna_ID
+ * @property $ID
  * @property $Nombre_Vacuna
  * @property $Fecha
  * @property $Dosis
@@ -33,7 +33,7 @@ class Vacuna extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Vacuna_ID', 'Nombre_Vacuna', 'Fecha', 'Dosis', 'Observaciones', 'Laboratorio', 'mascota_id', 'veterinario_id'];
+    protected $fillable = ['ID', 'Nombre_Vacuna', 'Fecha', 'Dosis', 'Observaciones', 'Laboratorio', 'mascota_id', 'veterinario_id'];
 
 
     /**
@@ -41,7 +41,7 @@ class Vacuna extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'Mascota_ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
     }
     
     /**
@@ -49,7 +49,7 @@ class Vacuna extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'Veterinario_ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
     }
     
     /**
@@ -57,7 +57,7 @@ class Vacuna extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'Vacuna_ID', 'vacunas_id');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'vacunas_id');
     }
     
     /**
@@ -65,7 +65,7 @@ class Vacuna extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'Vacuna_ID', 'vacunas_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'vacunas_id');
     }
     
 }

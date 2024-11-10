@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Archivos Id:</strong>
-                                    {{ $archivosAdjunto->Archivos_ID }}
+                                    <strong>Id:</strong>
+                                    {{ $archivosAdjunto->ID }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Nombre Archivo:</strong>

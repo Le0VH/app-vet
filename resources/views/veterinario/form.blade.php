@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="veterinario__i_d" class="form-label">{{ __('Veterinario Id') }}</label>
-            <input type="text" name="Veterinario_ID" class="form-control @error('Veterinario_ID') is-invalid @enderror" value="{{ old('Veterinario_ID', $veterinario?->Veterinario_ID) }}" id="veterinario__i_d" placeholder="Veterinario Id">
-            {!! $errors->first('Veterinario_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $veterinario?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="nombre__veterinario" class="form-label">{{ __('Nombre Veterinario') }}</label>

@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Archivos Id</th>
+									<th >Id</th>
 									<th >Nombre Archivo</th>
 									<th >Tipo Archivo</th>
 									<th >Fecha Archivo</th>
@@ -55,7 +55,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $archivosAdjunto->Archivos_ID }}</td>
+										<td >{{ $archivosAdjunto->ID }}</td>
 										<td >{{ $archivosAdjunto->Nombre_Archivo }}</td>
 										<td >{{ $archivosAdjunto->Tipo_Archivo }}</td>
 										<td >{{ $archivosAdjunto->Fecha_Archivo }}</td>

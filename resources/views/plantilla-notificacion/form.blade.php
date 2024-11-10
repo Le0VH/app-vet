@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="pantilla__i_d" class="form-label">{{ __('Pantilla Id') }}</label>
-            <input type="text" name="Pantilla_ID" class="form-control @error('Pantilla_ID') is-invalid @enderror" value="{{ old('Pantilla_ID', $plantillaNotificacion?->Pantilla_ID) }}" id="pantilla__i_d" placeholder="Pantilla Id">
-            {!! $errors->first('Pantilla_ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="i_d" class="form-label">{{ __('Id') }}</label>
+            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $plantillaNotificacion?->ID) }}" id="i_d" placeholder="Id">
+            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="nombre" class="form-label">{{ __('Nombre') }}</label>
