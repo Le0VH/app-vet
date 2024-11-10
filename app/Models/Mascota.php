@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Mascota
  *
  * @property $id
+ * @property $nombre_mascota
  * @property $Especie
  * @property $Raza
  * @property $Tipo_Pelaje
@@ -19,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Numero_Chip
  * @property $Castracion
  * @property $Fecha_Castracion
- * @property $nombre_mascota
  * @property $id_dueño
  * @property $historial_medico_id
  * @property $desparacitaciones_id
@@ -48,8 +48,8 @@ class Mascota extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota'];
-    protected $nullable = ['historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
+    protected $fillable = ['nombre_mascota', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -19,11 +19,11 @@
                     </div>
 
                     <div class="card-body bg-white">
+                        
                                 <div class="form-group mb-2 mb20">
                                     <strong>Nombre Mascota:</strong>
                                     {{ $mascota->nombre_mascota }}
                                 </div>
-                        
                                 <div class="form-group mb-2 mb20">
                                     <strong>Especie:</strong>
                                     {{ $mascota->Especie }}

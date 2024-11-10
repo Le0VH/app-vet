@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Mascotas
+    Users
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Mascotas') }}
+                                {{ __('Users') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('mascotas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,52 +36,30 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Nombre Mascota</th>
-									<th >Especie</th>
-									<th >Raza</th>
-									<th >Tipo Pelaje</th>
-									<th >Color Pelaje</th>
-									<th >Fecha Nacimiento</th>
-									<th >Fecha Adopcion</th>
-									<th >Peso</th>
-									<th >Tipificacion Sangre</th>
-									<th >Numero Chip</th>
-									<th >Castracion</th>
-									<th >Fecha Castracion</th>
-									<th >Id Dueño</th>
-									<th >Historial Medico Id</th>
-									<th >Desparacitaciones Id</th>
-									<th >Veterinario Id</th>
+									<th >Name</th>
+									<th >Lastnames</th>
+									<th >Email</th>
+									<th >Phone</th>
+									<th >Rol</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($mascotas as $mascota)
+                                    @foreach ($users as $user)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $mascota->nombre_mascota }}</td>
-										<td >{{ $mascota->Especie }}</td>
-										<td >{{ $mascota->Raza }}</td>
-										<td >{{ $mascota->Tipo_Pelaje }}</td>
-										<td >{{ $mascota->Color_Pelaje }}</td>
-										<td >{{ $mascota->Fecha_Nacimiento }}</td>
-										<td >{{ $mascota->Fecha_Adopcion }}</td>
-										<td >{{ $mascota->Peso }}</td>
-										<td >{{ $mascota->Tipificacion_Sangre }}</td>
-										<td >{{ $mascota->Numero_Chip }}</td>
-										<td >{{ $mascota->Castracion }}</td>
-										<td >{{ $mascota->Fecha_Castracion }}</td>
-										<td >{{ $mascota->id_dueño }}</td>
-										<td >{{ $mascota->historial_medico_id }}</td>
-										<td >{{ $mascota->desparacitaciones_id }}</td>
-										<td >{{ $mascota->veterinario_id }}</td>
+										<td >{{ $user->name }}</td>
+										<td >{{ $user->lastnames }}</td>
+										<td >{{ $user->email }}</td>
+										<td >{{ $user->phone }}</td>
+										<td >{{ $user->rol }}</td>
 
                                             <td>
-                                                <form action="{{ route('mascotas.destroy', $mascota->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('mascotas.show', $mascota->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('mascotas.edit', $mascota->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('users.show', $user->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('users.edit', $user->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -94,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $mascotas->withQueryString()->links() !!}
+                {!! $users->withQueryString()->links() !!}
             </div>
         </div>
     </div>
