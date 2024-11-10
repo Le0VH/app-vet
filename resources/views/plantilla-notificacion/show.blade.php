@@ -21,10 +21,6 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Id:</strong>
-                                    {{ $plantillaNotificacion->ID }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
                                     {{ $plantillaNotificacion->Nombre }}
                                 </div>

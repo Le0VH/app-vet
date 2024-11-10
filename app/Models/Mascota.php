@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Mascota
  *
- * @property $ID
+ * @property $id
  * @property $Especie
  * @property $Raza
  * @property $Tipo_Pelaje
@@ -48,7 +48,7 @@ class Mascota extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
+    protected $fillable = ['Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
 
 
     /**

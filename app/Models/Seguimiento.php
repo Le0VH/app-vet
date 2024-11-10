@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Seguimiento
  *
- * @property $ID
+ * @property $id
  * @property $fecha
  * @property $peso
  * @property $observaciones
@@ -29,7 +29,7 @@ class Seguimiento extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'fecha', 'peso', 'observaciones', 'mascota_id'];
+    protected $fillable = ['fecha', 'peso', 'observaciones', 'mascota_id'];
 
 
     /**

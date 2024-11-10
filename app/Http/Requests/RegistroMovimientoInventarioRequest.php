@@ -22,7 +22,6 @@ class RegistroMovimientoInventarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Tipo_Movimiento' => 'string',
 			'Descripcion' => 'string',
         ];

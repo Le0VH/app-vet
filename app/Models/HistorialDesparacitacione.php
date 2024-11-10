@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class HistorialDesparacitacione
  *
- * @property $ID
+ * @property $id
  * @property $Fecha
  * @property $Observaciones
  * @property $movimiento_id
@@ -30,7 +30,7 @@ class HistorialDesparacitacione extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Fecha', 'Observaciones', 'movimiento_id', 'seguimiento_id'];
+    protected $fillable = ['Fecha', 'Observaciones', 'movimiento_id', 'seguimiento_id'];
 
 
     /**

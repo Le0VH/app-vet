@@ -22,7 +22,6 @@ class MascotaRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Especie' => 'string',
 			'Raza' => 'string',
 			'Tipo_Pelaje' => 'string',

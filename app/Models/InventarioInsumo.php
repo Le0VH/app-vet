@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class InventarioInsumo
  *
- * @property $ID
+ * @property $id
  * @property $Nombre
  * @property $Descripcion
  * @property $Cantidad
@@ -30,7 +30,7 @@ class InventarioInsumo extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Nombre', 'Descripcion', 'Cantidad', 'Proveedor', 'Fecha_Ingreso', 'Fecha_Caducidad', 'Costo_Monetareo'];
+    protected $fillable = ['Nombre', 'Descripcion', 'Cantidad', 'Proveedor', 'Fecha_Ingreso', 'Fecha_Caducidad', 'Costo_Monetareo'];
 
 
     /**

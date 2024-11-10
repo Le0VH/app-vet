@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Fecha Cita</th>
 									<th >Hora Cita</th>
 									<th >Motivo Cita</th>
@@ -56,7 +55,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $cita->ID }}</td>
 										<td >{{ $cita->Fecha_Cita }}</td>
 										<td >{{ $cita->Hora_Cita }}</td>
 										<td >{{ $cita->Motivo_Cita }}</td>

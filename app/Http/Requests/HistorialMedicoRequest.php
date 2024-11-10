@@ -22,7 +22,6 @@ class HistorialMedicoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Descripcion' => 'string',
         ];
     }

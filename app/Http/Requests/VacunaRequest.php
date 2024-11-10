@@ -22,7 +22,6 @@ class VacunaRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Nombre_Vacuna' => 'string',
 			'Dosis' => 'string',
 			'Observaciones' => 'string',

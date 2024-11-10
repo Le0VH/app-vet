@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Fecha</th>
 									<th >Cantidad</th>
 									<th >Tipo Movimiento</th>
@@ -51,7 +50,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $registroMovimientoInventario->ID }}</td>
 										<td >{{ $registroMovimientoInventario->Fecha }}</td>
 										<td >{{ $registroMovimientoInventario->Cantidad }}</td>
 										<td >{{ $registroMovimientoInventario->Tipo_Movimiento }}</td>

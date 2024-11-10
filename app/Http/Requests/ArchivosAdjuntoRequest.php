@@ -22,7 +22,6 @@ class ArchivosAdjuntoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Nombre_Archivo' => 'string',
 			'Tipo_Archivo' => 'string',
 			'Descripcion' => 'string',

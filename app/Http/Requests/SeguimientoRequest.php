@@ -22,7 +22,6 @@ class SeguimientoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'peso' => 'string',
 			'observaciones' => 'string',
         ];

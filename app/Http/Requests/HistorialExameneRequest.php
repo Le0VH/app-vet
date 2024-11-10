@@ -22,7 +22,6 @@ class HistorialExameneRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Tipo_Examen' => 'string',
 			'Resultado' => 'string',
 			'Observaciones' => 'string',

@@ -2,11 +2,6 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="i_d" class="form-label">{{ __('Id') }}</label>
-            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $mascota?->ID) }}" id="i_d" placeholder="Id">
-            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
             <label for="especie" class="form-label">{{ __('Especie') }}</label>
             <input type="text" name="Especie" class="form-control @error('Especie') is-invalid @enderror" value="{{ old('Especie', $mascota?->Especie) }}" id="especie" placeholder="Especie">
             {!! $errors->first('Especie', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}

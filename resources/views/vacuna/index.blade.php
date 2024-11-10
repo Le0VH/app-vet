@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Nombre Vacuna</th>
 									<th >Fecha</th>
 									<th >Dosis</th>
@@ -53,7 +52,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $vacuna->ID }}</td>
 										<td >{{ $vacuna->Nombre_Vacuna }}</td>
 										<td >{{ $vacuna->Fecha }}</td>
 										<td >{{ $vacuna->Dosis }}</td>

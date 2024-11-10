@@ -22,7 +22,6 @@ class CitaRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Motivo_Cita' => 'string',
 			'Estado_Cita' => 'string',
 			'Tipo_De_Pago' => 'string',

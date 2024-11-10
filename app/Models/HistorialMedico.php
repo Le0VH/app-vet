@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class HistorialMedico
  *
- * @property $ID
+ * @property $id
  * @property $Fecha
  * @property $Descripcion
  * @property $id_atencion
@@ -44,7 +44,7 @@ class HistorialMedico extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Fecha', 'Descripcion', 'id_atencion', 'examen_id', 'vacunas_id', 'citas_id', 'mascota_id', 'veterinario_id', 'tratamiento_id', 'movimiento_id', 'desparacitacion_id'];
+    protected $fillable = ['Fecha', 'Descripcion', 'id_atencion', 'examen_id', 'vacunas_id', 'citas_id', 'mascota_id', 'veterinario_id', 'tratamiento_id', 'movimiento_id', 'desparacitacion_id'];
 
 
     /**

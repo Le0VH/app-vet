@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class RegistroMovimientoInventario
  *
- * @property $ID
+ * @property $id
  * @property $Fecha
  * @property $Cantidad
  * @property $Tipo_Movimiento
@@ -31,7 +31,7 @@ class RegistroMovimientoInventario extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Fecha', 'Cantidad', 'Tipo_Movimiento', 'Descripcion', 'inventario_id'];
+    protected $fillable = ['Fecha', 'Cantidad', 'Tipo_Movimiento', 'Descripcion', 'inventario_id'];
 
 
     /**

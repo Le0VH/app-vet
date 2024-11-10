@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Tratamiento
  *
- * @property $ID
+ * @property $id
  * @property $Fecha_Inicio
  * @property $Fecha_Termino
  * @property $Descripcion_Tratamiento
@@ -31,7 +31,7 @@ class Tratamiento extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Fecha_Inicio', 'Fecha_Termino', 'Descripcion_Tratamiento', 'Observaciones', 'veterinario_id', 'movimiento_id'];
+    protected $fillable = ['Fecha_Inicio', 'Fecha_Termino', 'Descripcion_Tratamiento', 'Observaciones', 'veterinario_id', 'movimiento_id'];
 
 
     /**

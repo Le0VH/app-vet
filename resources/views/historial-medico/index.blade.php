@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Fecha</th>
 									<th >Descripcion</th>
 									<th >Id Atencion</th>
@@ -57,7 +56,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $historialMedico->ID }}</td>
 										<td >{{ $historialMedico->Fecha }}</td>
 										<td >{{ $historialMedico->Descripcion }}</td>
 										<td >{{ $historialMedico->id_atencion }}</td>

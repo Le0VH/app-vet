@@ -2,11 +2,6 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="i_d" class="form-label">{{ __('Id') }}</label>
-            <input type="text" name="ID" class="form-control @error('ID') is-invalid @enderror" value="{{ old('ID', $tratamiento?->ID) }}" id="i_d" placeholder="Id">
-            {!! $errors->first('ID', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
             <label for="fecha__inicio" class="form-label">{{ __('Fecha Inicio') }}</label>
             <input type="text" name="Fecha_Inicio" class="form-control @error('Fecha_Inicio') is-invalid @enderror" value="{{ old('Fecha_Inicio', $tratamiento?->Fecha_Inicio) }}" id="fecha__inicio" placeholder="Fecha Inicio">
             {!! $errors->first('Fecha_Inicio', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}

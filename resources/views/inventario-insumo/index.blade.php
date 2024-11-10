@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Nombre</th>
 									<th >Descripcion</th>
 									<th >Cantidad</th>
@@ -53,7 +52,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $inventarioInsumo->ID }}</td>
 										<td >{{ $inventarioInsumo->Nombre }}</td>
 										<td >{{ $inventarioInsumo->Descripcion }}</td>
 										<td >{{ $inventarioInsumo->Cantidad }}</td>

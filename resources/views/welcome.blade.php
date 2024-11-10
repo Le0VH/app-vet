@@ -37,7 +37,7 @@
           <a class="nav-link" href="{{route('Iniciar_Sesion')}}">login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('citas.index')}}">Citas</a>
+          <a class="nav-link" href="{{route('mascotas.index')}}">Mascotas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>

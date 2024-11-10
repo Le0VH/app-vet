@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class PlantillaNotificacion
  *
- * @property $ID
+ * @property $id
  * @property $Nombre
  * @property $Tipo_Notificacion
  * @property $Contenido
@@ -31,7 +31,7 @@ class PlantillaNotificacion extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Nombre', 'Tipo_Notificacion', 'Contenido', 'notificacion_id', 'veterinario_id', 'usuario_id'];
+    protected $fillable = ['Nombre', 'Tipo_Notificacion', 'Contenido', 'notificacion_id', 'veterinario_id', 'usuario_id'];
 
 
     /**

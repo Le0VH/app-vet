@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class ArchivosAdjunto
  *
- * @property $ID
+ * @property $id
  * @property $Nombre_Archivo
  * @property $Tipo_Archivo
  * @property $Fecha_Archivo
@@ -36,7 +36,7 @@ class ArchivosAdjunto extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['ID', 'Nombre_Archivo', 'Tipo_Archivo', 'Fecha_Archivo', 'Descripcion', 'veterinario_ID', 'Historial_med_ID', 'vacunas_id', 'mascota_id', 'usuario_id'];
+    protected $fillable = ['Nombre_Archivo', 'Tipo_Archivo', 'Fecha_Archivo', 'Descripcion', 'veterinario_ID', 'Historial_med_ID', 'vacunas_id', 'mascota_id', 'usuario_id'];
 
 
     /**

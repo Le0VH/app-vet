@@ -22,7 +22,6 @@ class PlantillaNotificacionRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'ID' => 'required',
 			'Nombre' => 'string',
 			'Tipo_Notificacion' => 'string',
 			'Contenido' => 'string',

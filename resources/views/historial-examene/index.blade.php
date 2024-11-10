@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id</th>
 									<th >Fecha</th>
 									<th >Tipo Examen</th>
 									<th >Resultado</th>
@@ -53,7 +52,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $historialExamene->ID }}</td>
 										<td >{{ $historialExamene->fecha }}</td>
 										<td >{{ $historialExamene->Tipo_Examen }}</td>
 										<td >{{ $historialExamene->Resultado }}</td>

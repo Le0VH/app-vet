@@ -21,10 +21,6 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Id:</strong>
-                                    {{ $tratamiento->ID }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
                                     <strong>Fecha Inicio:</strong>
                                     {{ $tratamiento->Fecha_Inicio }}
                                 </div>
