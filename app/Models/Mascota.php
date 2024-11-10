@@ -40,7 +40,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Mascota extends Model
 {
-    
+    public $timestamps = false;
     protected $perPage = 20;
 
     /**
@@ -48,8 +48,8 @@ class Mascota extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
-
+    protected $fillable = ['Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'nombre_mascota'];
+    protected $nullable = ['historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

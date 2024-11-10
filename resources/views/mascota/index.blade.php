@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+                                    <th >Nombre Mascota</th>   
 									<th >Especie</th>
 									<th >Raza</th>
 									<th >Tipo Pelaje</th>
@@ -47,7 +47,6 @@
 									<th >Numero Chip</th>
 									<th >Castracion</th>
 									<th >Fecha Castracion</th>
-									<th >Nombre Mascota</th>
 									<th >Id Dueño</th>
 									<th >Historial Medico Id</th>
 									<th >Desparacitaciones Id</th>
@@ -60,7 +59,7 @@
                                     @foreach ($mascotas as $mascota)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+                                        <td >{{ $mascota->nombre_mascota }}</td>    
 										<td >{{ $mascota->Especie }}</td>
 										<td >{{ $mascota->Raza }}</td>
 										<td >{{ $mascota->Tipo_Pelaje }}</td>
@@ -72,7 +71,6 @@
 										<td >{{ $mascota->Numero_Chip }}</td>
 										<td >{{ $mascota->Castracion }}</td>
 										<td >{{ $mascota->Fecha_Castracion }}</td>
-										<td >{{ $mascota->nombre_mascota }}</td>
 										<td >{{ $mascota->id_dueño }}</td>
 										<td >{{ $mascota->historial_medico_id }}</td>
 										<td >{{ $mascota->desparacitaciones_id }}</td>
