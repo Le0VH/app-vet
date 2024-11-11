@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\MascotaRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Auth;
 
 class MascotaController extends Controller
 {
@@ -16,7 +17,7 @@ class MascotaController extends Controller
      */
     public function index(Request $request): View
     {
-        $mascotas = Mascota::paginate();
+        $mascotas = Mascota::where('id_dueño', '=', Auth::user()->id)->paginate();
 
         return view('mascota.index', compact('mascotas'))
             ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());
