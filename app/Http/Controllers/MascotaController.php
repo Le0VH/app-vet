@@ -17,6 +17,14 @@ class MascotaController extends Controller
      */
     public function index(Request $request): View
     {
+        if(Auth::user()->id == 2){
+            $mascotas = Mascota::paginate();
+
+        return view('mascota.index', compact('mascotas'))
+            ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());
+
+        }
+
         $mascotas = Mascota::where('id_dueño', '=', Auth::user()->id)->paginate();
 
         return view('mascota.index', compact('mascotas'))
