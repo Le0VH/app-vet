@@ -15,13 +15,11 @@
                             <span id="card_title">
                                 {{ __('Mascotas') }}
                             </span>
-                            @role('admin')
                              <div class="float-right">
                                 <a href="{{ route('mascotas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
-                              @endrole
                         </div>
                     </div>
                     @if ($message = Session::get('success'))

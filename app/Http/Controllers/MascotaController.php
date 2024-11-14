@@ -16,6 +16,7 @@ class MascotaController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request): View
+
     {
         if(Auth::user()->id == 2){
             $mascotas = Mascota::paginate();
@@ -46,10 +47,27 @@ class MascotaController extends Controller
      */
     public function store(MascotaRequest $request): RedirectResponse
     {
-        Mascota::create($request->validated());
+        $mascota = new Mascota();
+    
+        // Asignar los valores del request manualmente
+        $mascota->nombre_mascota = $request->input('nombre_mascota');
+        $mascota->especie = $request->input('Especie');
+        $mascota->raza = $request->input('Raza');
+        $mascota->tipo_pelaje = $request->input('Tipo_Pelaje');
+        $mascota->color_pelaje = $request->input('color_pelaje');
+        $mascota->fecha_nacimiento = $request->input('Fecha_Nacimiento');
+        $mascota->fecha_adopcion = $request->input('Fecha_Adopcion');
+        $mascota->tipificacion_sangre = $request->input('tipificacion_sangre');
+        $mascota->numero_chip = $request->input('numero_chip');
+        $mascota->castracion = $request->input('castracion');
+        $mascota->fecha_castracion = $request->input('Fecha_Castracion');
+        $mascota->id_dueño = Auth::user()->id;
+        
+        // Guardar la instancia de Mascota
+        $mascota->save();
 
-        return Redirect::route('mascotas.index')
-            ->with('success', 'Mascota created successfully.');
+        return redirect()->route('mascotas.index')
+        ->with('success', 'Mascota updated successfully');
     }
 
     /**
@@ -77,9 +95,39 @@ class MascotaController extends Controller
      */
     public function update(MascotaRequest $request, Mascota $mascota): RedirectResponse
     {
-        $mascota->update($request->validated());
-
-        return Redirect::route('mascotas.index')
+        // Asignar los valores a variables
+        $nombre_mascota = $request->input('nombre_mascota');
+        $especie = $request->input('Especie');
+        $raza = $request->input('Raza');
+        $tipo_pelaje = $request->input('Tipo_Pelaje');
+        $color_pelaje = $request->input('Color_Pelaje');
+        $fecha_nacimiento = $request->input('Fecha_Nacimiento');
+        $fecha_adopcion = $request->input('Fecha_Adopcion');
+        $tipificacion_sangre = $request->input('Tipificacion_Sangre');
+        $numero_chip = $request->input('Numero_Chip');
+        $castracion = $request->input('Castracion');
+        $fecha_castracion = $request->input('Fecha_Castracion');
+        $id_dueño  = Auth::user()->id;
+    
+        // Asignar las variables al modelo
+        $mascota->nombre_mascota = $nombre_mascota;
+        $mascota->especie = $especie;
+        $mascota->raza = $raza;
+        $mascota->tipo_pelaje = $tipo_pelaje;
+        $mascota->color_pelaje = $color_pelaje;
+        $mascota->fecha_nacimiento = $fecha_nacimiento;
+        $mascota->fecha_adopcion = $fecha_adopcion;
+        $mascota->tipificacion_sangre = $tipificacion_sangre;
+        $mascota->numero_chip = $numero_chip;
+        $mascota->castracion = $castracion;
+        $mascota->fecha_castracion = $fecha_castracion;
+        $mascota->id_dueño = $id_dueño;
+    
+        // Guardar la instancia con los valores actualizados
+        $mascota->save();
+    
+        // Redirigir con mensaje de éxito
+        return redirect()->route('mascotas.index')
             ->with('success', 'Mascota updated successfully');
     }
 

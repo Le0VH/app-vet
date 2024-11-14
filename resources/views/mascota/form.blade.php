@@ -28,12 +28,12 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha__nacimiento" class="form-label">{{ __('Fecha Nacimiento') }}</label>
-            <input type="text" name="Fecha_Nacimiento" class="form-control @error('Fecha_Nacimiento') is-invalid @enderror" value="{{ old('Fecha_Nacimiento', $mascota?->Fecha_Nacimiento) }}" id="fecha__nacimiento" placeholder="Fecha Nacimiento">
+            <input type="date" name="Fecha_Nacimiento" class="form-control @error('Fecha_Nacimiento') is-invalid @enderror" value="{{ old('Fecha_Nacimiento', $mascota?->Fecha_Nacimiento) }}" id="fecha__nacimiento" placeholder="Fecha Nacimiento">
             {!! $errors->first('Fecha_Nacimiento', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha__adopcion" class="form-label">{{ __('Fecha Adopcion') }}</label>
-            <input type="text" name="Fecha_Adopcion" class="form-control @error('Fecha_Adopcion') is-invalid @enderror" value="{{ old('Fecha_Adopcion', $mascota?->Fecha_Adopcion) }}" id="fecha__adopcion" placeholder="Fecha Adopcion">
+            <input type="date" name="Fecha_Adopcion" class="form-control @error('Fecha_Adopcion') is-invalid @enderror" value="{{ old('Fecha_Adopcion', $mascota?->Fecha_Adopcion) }}" id="fecha__adopcion" placeholder="Fecha Adopcion">
             {!! $errors->first('Fecha_Adopcion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
@@ -58,12 +58,12 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha__castracion" class="form-label">{{ __('Fecha Castracion') }}</label>
-            <input type="text" name="Fecha_Castracion" class="form-control @error('Fecha_Castracion') is-invalid @enderror" value="{{ old('Fecha_Castracion', $mascota?->Fecha_Castracion) }}" id="fecha__castracion" placeholder="Fecha Castracion">
+            <input type="date" name="Fecha_Castracion" class="form-control @error('Fecha_Castracion') is-invalid @enderror" value="{{ old('Fecha_Castracion', $mascota?->Fecha_Castracion) }}" id="fecha__castracion" placeholder="Fecha Castracion">
             {!! $errors->first('Fecha_Castracion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-        <div class="form-group mb-2 mb20">
+        <div class="form-group mb-0 mb-20">
             <label for="id_dueño" class="form-label">{{ __('Id Dueño') }}</label>
-            <input type="text" name="id_dueño" class="form-control @error('id_dueño') is-invalid @enderror" value="{{ old('id_dueño', $mascota?->id_dueño) }}" id="id_dueño" placeholder="Id Dueño">
+            <input type="text" name="id_dueño" class="form-control @error('id_dueño') is-invalid @enderror" value="{{Auth::user()->id}}" id="id_dueño" @role('veterinario')style="visibility:hidden;height:0px;padding: 0px 10px;" @endrole placeholder="Id Dueño">
             {!! $errors->first('id_dueño', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
@@ -81,7 +81,6 @@
             <input type="text" name="veterinario_id" class="form-control @error('veterinario_id') is-invalid @enderror" value="{{ old('veterinario_id', $mascota?->veterinario_id) }}" id="veterinario_id" placeholder="Veterinario Id">
             {!! $errors->first('veterinario_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-
     </div>
     <div class="col-md-12 mt20 mt-2">
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

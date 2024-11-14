@@ -54,10 +54,40 @@
                     <input type="text" name="phone" class="form-control" placeholder="Telefono" value="{{Auth::user()->phone}}" >
                 </div>
                 <div class="form-group">
-                    <strong>Rol:</strong>
-                    <input type="text" name="rol" class="form-control" placeholder="Rol" value="{{Auth::user()->rol}}" >
+                    <strong>Rut:</strong>
+                    <input type="text" name="rut" class="form-control" placeholder="Rut" value="{{Auth::user()->rut}}" >
                 </div>
                 <div class="form-group">
+                    <strong>Direccion:</strong>
+                    <input type="text" name="adress" class="form-control" placeholder="Direccion" value="{{Auth::user()->adress}}" >
+                </div>    
+                <div class="form-group">
+                    <strong>Rol:</strong>
+                    <input type="text" name="rol" class="form-control" placeholder="Rol" value="{{Auth::user()->rol}}" >
+                </div>  
+                  
+                {{-- <?php
+                $rol = Auth::user()->rol;
+                
+                if ($rol == 1): 
+                ?>
+                    <div class="form-group">
+                        <strong>Rol 1:</strong>
+                        <input type="text" name="rol1" class="form-control" placeholder="1" value="" >
+                    </div>
+                <?php
+                else: 
+                ?>
+                    <div class="form-group">
+                        <strong>Rol 2:</strong>
+                        <input type="text" name="rol2" class="form-control" placeholder="2" value="" >
+                    </div>
+                <?php
+                endif;
+                ?> --}}
+                
+
+
                     <strong>Contraseña:</strong>
                     <div><input type="password" id="passbox" name="password" class="form-control" placeholder="Contraseña Actual" value="" disabled></div>
                     <div><input type="password" id="passbox1" name="newpassword" class="form-control" placeholder="Nueva Contraseña" value="" disabled></div>

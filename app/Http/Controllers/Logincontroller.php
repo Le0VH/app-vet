@@ -84,6 +84,8 @@ class Logincontroller extends Controller
         $userPassword   = $user->password;
         $userlastnames  = $user->lastnames;
         $userphone      = $user->phone;
+        $userrut        = $user->rut;
+        $useradress     = $user->adress;
         $userrol        = $user->rol;
 
         if($request->password !=""){
@@ -93,6 +95,8 @@ class Logincontroller extends Controller
             $lastnames  = $request->lastnames;
             $email      = $request->email;
             $phone      = $request->phone;
+            $rut        = $request->rut;
+            $adress     = $request->adress;
             $rol        = $request->rol;
 
                 //Verifico si la clave actual es igual a la clave del usuario en session
@@ -105,7 +109,7 @@ class Logincontroller extends Controller
                             $user->newpassword = Hash::make($request->newpassword);
                             $sqlBD = DB::table('users')
                                   ->where('ID', $user->id)
-                                  ->update(['password' => $user->newpassword, 'name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rol' => $rol]);
+                                  ->update(['password' => $user->newpassword, 'name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rut' => $rut, 'adress' => $adress, 'rol' => $rol]);
                     
                             return redirect()->back()->with('updateClave','La clave fue cambiada correctamente.');
                         }else{
@@ -126,10 +130,12 @@ class Logincontroller extends Controller
             $lastnames  = $request->lastnames;
             $email      = $request->email;
             $phone      = $request->phone;
+            $rut        = $request->rut;
+            $adress     = $request->adress;
             $rol        = $request->rol;
             $sqlBDUpdateName = DB::table('users')
                             ->where('ID', $user->id)
-                            ->update(['name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rol' => $rol]);
+                            ->update(['name' => $name, 'lastnames' => $lastnames, 'email' => $email, 'phone' => $phone, 'rut' => $rut, 'adress' => $adress, 'rol' => $rol]);
             return redirect()->back()->with('name','Datos actualizados correctamente.');;
 
         }
