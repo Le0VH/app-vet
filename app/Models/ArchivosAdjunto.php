@@ -44,7 +44,7 @@ class ArchivosAdjunto extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_ID', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_ID', 'id');
     }
     
     /**
@@ -52,7 +52,7 @@ class ArchivosAdjunto extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'Historial_med_ID', 'ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'Historial_med_ID', 'id');
     }
     
     /**
@@ -60,7 +60,7 @@ class ArchivosAdjunto extends Model
      */
     public function vacuna()
     {
-        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'ID');
+        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'id');
     }
     
     /**
@@ -68,7 +68,7 @@ class ArchivosAdjunto extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'id');
     }
     
     /**

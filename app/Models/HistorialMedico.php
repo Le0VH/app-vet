@@ -52,7 +52,7 @@ class HistorialMedico extends Model
      */
     public function historialExamene()
     {
-        return $this->belongsTo(\App\Models\HistorialExamene::class, 'examen_id', 'ID');
+        return $this->belongsTo(\App\Models\HistorialExamene::class, 'examen_id', 'id');
     }
     
     /**
@@ -60,7 +60,7 @@ class HistorialMedico extends Model
      */
     public function vacuna()
     {
-        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'ID');
+        return $this->belongsTo(\App\Models\Vacuna::class, 'vacunas_id', 'id');
     }
     
     /**
@@ -68,7 +68,7 @@ class HistorialMedico extends Model
      */
     public function cita()
     {
-        return $this->belongsTo(\App\Models\Cita::class, 'citas_id', 'ID');
+        return $this->belongsTo(\App\Models\Cita::class, 'citas_id', 'id');
     }
     
     /**
@@ -76,7 +76,7 @@ class HistorialMedico extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'id');
     }
     
     /**
@@ -84,7 +84,7 @@ class HistorialMedico extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -92,7 +92,7 @@ class HistorialMedico extends Model
      */
     public function tratamiento()
     {
-        return $this->belongsTo(\App\Models\Tratamiento::class, 'tratamiento_id', 'ID');
+        return $this->belongsTo(\App\Models\Tratamiento::class, 'tratamiento_id', 'id');
     }
     
     /**
@@ -100,7 +100,7 @@ class HistorialMedico extends Model
      */
     public function registroMovimientoInventario()
     {
-        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'id');
     }
     
     /**
@@ -108,7 +108,7 @@ class HistorialMedico extends Model
      */
     public function historialDesparacitacione()
     {
-        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitacion_id', 'ID');
+        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitacion_id', 'id');
     }
     
     /**
@@ -116,7 +116,7 @@ class HistorialMedico extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'Historial_med_ID');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'id', 'Historial_med_ID');
     }
     
     /**
@@ -124,7 +124,7 @@ class HistorialMedico extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'ID', 'historial_med_id');
+        return $this->hasMany(\App\Models\Cita::class, 'id', 'historial_med_id');
     }
     
     /**
@@ -132,7 +132,7 @@ class HistorialMedico extends Model
      */
     public function mascotas()
     {
-        return $this->hasMany(\App\Models\Mascota::class, 'ID', 'historial_medico_id');
+        return $this->hasMany(\App\Models\Mascota::class, 'id', 'historial_medico_id');
     }
     
 }

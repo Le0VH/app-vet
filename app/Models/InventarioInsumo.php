@@ -38,7 +38,7 @@ class InventarioInsumo extends Model
      */
     public function registroMovimientoInventarios()
     {
-        return $this->hasMany(\App\Models\RegistroMovimientoInventario::class, 'ID', 'inventario_id');
+        return $this->hasMany(\App\Models\RegistroMovimientoInventario::class, 'id', 'inventario_id');
     }
     
 }

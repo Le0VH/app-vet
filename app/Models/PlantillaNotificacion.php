@@ -39,7 +39,7 @@ class PlantillaNotificacion extends Model
      */
     public function notificacione()
     {
-        return $this->belongsTo(\App\Models\Notificacione::class, 'notificacion_id', 'ID');
+        return $this->belongsTo(\App\Models\Notificacione::class, 'notificacion_id', 'id');
     }
     
     /**
@@ -47,7 +47,7 @@ class PlantillaNotificacion extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**

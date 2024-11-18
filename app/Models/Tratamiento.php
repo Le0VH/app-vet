@@ -39,7 +39,7 @@ class Tratamiento extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -47,7 +47,7 @@ class Tratamiento extends Model
      */
     public function registroMovimientoInventario()
     {
-        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'id');
     }
     
     /**
@@ -55,7 +55,7 @@ class Tratamiento extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'tratamiento_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'tratamiento_id');
     }
     
 }

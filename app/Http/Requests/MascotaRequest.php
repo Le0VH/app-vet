@@ -27,10 +27,13 @@ class MascotaRequest extends FormRequest
 			'Raza' => 'string',
 			'Tipo_Pelaje' => 'string',
 			'Color_Pelaje' => 'string',
+			'Fecha_Nacimiento' => 'required',
+			'Fecha_Adopcion' => 'required',
 			'Peso' => 'string',
 			'Tipificacion_Sangre' => 'string',
 			'Numero_Chip' => 'string',
 			'Castracion' => 'string',
+			'Fecha_Castracion' => 'required',
 			'id_dueño' => 'required',
         ];
     }

@@ -18,15 +18,20 @@ class MascotaController extends Controller
     public function index(Request $request): View
 
     {
-        if(Auth::user()->id == 2){
+        if(Auth::user()->rol == 1){
             $mascotas = Mascota::paginate();
 
         return view('mascota.index', compact('mascotas'))
             ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());
 
-        }
+        }if(Auth::user()->rol == 3){
 
         $mascotas = Mascota::where('id_dueño', '=', Auth::user()->id)->paginate();
+
+        return view('mascota.index', compact('mascotas'))
+            ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());
+        }
+        $mascotas = Mascota::whereRaw('1 = 0')->paginate();
 
         return view('mascota.index', compact('mascotas'))
             ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());

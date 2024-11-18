@@ -38,7 +38,7 @@ class HistorialDesparacitacione extends Model
      */
     public function registroMovimientoInventario()
     {
-        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\RegistroMovimientoInventario::class, 'movimiento_id', 'id');
     }
     
     /**
@@ -46,7 +46,7 @@ class HistorialDesparacitacione extends Model
      */
     public function seguimiento()
     {
-        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'id');
     }
     
     /**
@@ -54,7 +54,7 @@ class HistorialDesparacitacione extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'desparacitacion_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'desparacitacion_id');
     }
     
     /**
@@ -62,7 +62,7 @@ class HistorialDesparacitacione extends Model
      */
     public function mascotas()
     {
-        return $this->hasMany(\App\Models\Mascota::class, 'ID', 'desparacitaciones_id');
+        return $this->hasMany(\App\Models\Mascota::class, 'id', 'desparacitaciones_id');
     }
     
 }

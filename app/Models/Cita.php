@@ -47,7 +47,7 @@ class Cita extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'id');
     }
     
     /**
@@ -55,7 +55,7 @@ class Cita extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_med_id', 'ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_med_id', 'id');
     }
     
     /**
@@ -63,7 +63,7 @@ class Cita extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -71,7 +71,7 @@ class Cita extends Model
      */
     public function seguimiento()
     {
-        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'ID');
+        return $this->belongsTo(\App\Models\Seguimiento::class, 'seguimiento_id', 'id');
     }
     
     /**
@@ -87,7 +87,7 @@ class Cita extends Model
      */
     public function historialExamenes()
     {
-        return $this->hasMany(\App\Models\HistorialExamene::class, 'ID', 'citas_id');
+        return $this->hasMany(\App\Models\HistorialExamene::class, 'id', 'citas_id');
     }
     
     /**
@@ -95,7 +95,7 @@ class Cita extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'citas_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'citas_id');
     }
     
 }

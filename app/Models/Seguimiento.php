@@ -37,7 +37,7 @@ class Seguimiento extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'id');
     }
     
     /**
@@ -45,7 +45,7 @@ class Seguimiento extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'ID', 'seguimiento_id');
+        return $this->hasMany(\App\Models\Cita::class, 'id', 'seguimiento_id');
     }
     
     /**
@@ -53,7 +53,7 @@ class Seguimiento extends Model
      */
     public function historialDesparacitaciones()
     {
-        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'ID', 'seguimiento_id');
+        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'id', 'seguimiento_id');
     }
     
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('template_title')
     Mascotas
@@ -28,6 +28,17 @@
                         </div>
                     @endif
 
+                    <?php
+                    $rol = Auth::user()->rol;
+                        
+                    if ($rol == 1 or 2): 
+                    ?>
+                    <input type="search" id="Mascotabusqueda" name="buscMascota" placeholder="Ingrese Rut..."/>
+                    <button>Buscar</button>
+                <?php
+                    endif;
+                ?>
+
                     <div class="card-body bg-white">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
@@ -47,11 +58,6 @@
 									<th >Numero Chip</th>
 									<th >Castracion</th>
 									<th >Fecha Castracion</th>
-									<th >Id Dueño</th>
-									<th >Historial Medico Id</th>
-									<th >Desparacitaciones Id</th>
-									<th >Veterinario Id</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -72,15 +78,12 @@
 										<td >{{ $mascota->Numero_Chip }}</td>
 										<td >{{ $mascota->Castracion }}</td>
 										<td >{{ $mascota->Fecha_Castracion }}</td>
-										<td >{{ $mascota->id_dueño }}</td>
-										<td >{{ $mascota->historial_medico_id }}</td>
-										<td >{{ $mascota->desparacitaciones_id }}</td>
-										<td >{{ $mascota->veterinario_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('mascotas.destroy', $mascota->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('mascotas.show', $mascota->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('mascotas.edit', $mascota->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('historial-medicos.index', $mascota->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Historial Medico') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

@@ -27,6 +27,8 @@ Route::get('/', function () {
 
 Route::resource('usuarios', UsuariosController::class);
 
+
+Route::view('/Home',"welcome")->name('Home');
 Route::view('/Iniciar_Sesion',"login")->name('Iniciar_Sesion');
 Route::view('/registro',"register")->name('registro');
 Route::view('/actualizarperfil',"secret")->middleware('auth')->name('actualizarperfil');

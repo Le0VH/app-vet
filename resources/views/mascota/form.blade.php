@@ -61,26 +61,31 @@
             <input type="date" name="Fecha_Castracion" class="form-control @error('Fecha_Castracion') is-invalid @enderror" value="{{ old('Fecha_Castracion', $mascota?->Fecha_Castracion) }}" id="fecha__castracion" placeholder="Fecha Castracion">
             {!! $errors->first('Fecha_Castracion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-        <div class="form-group mb-0 mb-20">
-            <label for="id_dueño" class="form-label">{{ __('Id Dueño') }}</label>
-            <input type="text" name="id_dueño" class="form-control @error('id_dueño') is-invalid @enderror" value="{{Auth::user()->id}}" id="id_dueño" @role('veterinario')style="visibility:hidden;height:0px;padding: 0px 10px;" @endrole placeholder="Id Dueño">
-            {!! $errors->first('id_dueño', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="historial_medico_id" class="form-label">{{ __('Historial Medico Id') }}</label>
-            <input type="text" name="historial_medico_id" class="form-control @error('historial_medico_id') is-invalid @enderror" value="{{ old('historial_medico_id', $mascota?->historial_medico_id) }}" id="historial_medico_id" placeholder="Historial Medico Id">
-            {!! $errors->first('historial_medico_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="desparacitaciones_id" class="form-label">{{ __('Desparacitaciones Id') }}</label>
-            <input type="text" name="desparacitaciones_id" class="form-control @error('desparacitaciones_id') is-invalid @enderror" value="{{ old('desparacitaciones_id', $mascota?->desparacitaciones_id) }}" id="desparacitaciones_id" placeholder="Desparacitaciones Id">
-            {!! $errors->first('desparacitaciones_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="veterinario_id" class="form-label">{{ __('Veterinario Id') }}</label>
-            <input type="text" name="veterinario_id" class="form-control @error('veterinario_id') is-invalid @enderror" value="{{ old('veterinario_id', $mascota?->veterinario_id) }}" id="veterinario_id" placeholder="Veterinario Id">
-            {!! $errors->first('veterinario_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
+        <?php
+            $rol = Auth::user()->rol;
+                
+            if ($rol == 1): 
+            ?>
+                <div class="form-group mb-0 mb-20">
+                    <label for="id_dueño" class="form-label">{{ __('ID Dueño') }}</label>
+                    <input type="text" name="id_dueño" class="form-control @error('id_dueño') is-invalid @enderror" value="{{Auth::user()->id}}" id="id_dueño" placeholder="Id Dueño">
+                    {!! $errors->first('id_dueño', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+                 </div>
+        <?php
+            else:
+        ?>
+                <div class="form-group mb-0 mb-20">
+                    <label for="id_dueño" class="form-label">{{ __('') }}</label>
+                    <input type="text" name="id_dueño" class="form-control @error('id_dueño') is-invalid @enderror" value="{{Auth::user()->id}}" id="id_dueño" style="visibility:hidden;height:0px;padding: 0px 10px;" placeholder="Id Dueño">
+                    {!! $errors->first('id_dueño', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+                </div>
+        <?php
+            endif;
+        ?>
+
+
+
+
     </div>
     <div class="col-md-12 mt20 mt-2">
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

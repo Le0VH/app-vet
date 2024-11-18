@@ -22,6 +22,16 @@
             {!! $errors->first('phone', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
+            <label for="rut" class="form-label">{{ __('Rut') }}</label>
+            <input type="text" name="rut" class="form-control @error('rut') is-invalid @enderror" value="{{ old('rut', $user?->rut) }}" id="rut" placeholder="Rut">
+            {!! $errors->first('rut', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="adress" class="form-label">{{ __('Adress') }}</label>
+            <input type="text" name="adress" class="form-control @error('adress') is-invalid @enderror" value="{{ old('adress', $user?->adress) }}" id="adress" placeholder="Adress">
+            {!! $errors->first('adress', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
             <label for="rol" class="form-label">{{ __('Rol') }}</label>
             <input type="text" name="rol" class="form-control @error('rol') is-invalid @enderror" value="{{ old('rol', $user?->rol) }}" id="rol" placeholder="Rol">
             {!! $errors->first('rol', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}

@@ -41,7 +41,7 @@ class Vacuna extends Model
      */
     public function mascota()
     {
-        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'ID');
+        return $this->belongsTo(\App\Models\Mascota::class, 'mascota_id', 'id');
     }
     
     /**
@@ -49,7 +49,7 @@ class Vacuna extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -57,7 +57,7 @@ class Vacuna extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'vacunas_id');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'id', 'vacunas_id');
     }
     
     /**
@@ -65,7 +65,7 @@ class Vacuna extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'vacunas_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'vacunas_id');
     }
     
 }

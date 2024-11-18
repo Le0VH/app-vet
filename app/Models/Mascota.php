@@ -56,7 +56,7 @@ class Mascota extends Model
      */
     public function historialMedico()
     {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_medico_id', 'ID');
+        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_medico_id', 'id');
     }
     
     /**
@@ -64,7 +64,7 @@ class Mascota extends Model
      */
     public function historialDesparacitacione()
     {
-        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitaciones_id', 'ID');
+        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitaciones_id', 'id');
     }
     
     /**
@@ -72,7 +72,7 @@ class Mascota extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -88,7 +88,7 @@ class Mascota extends Model
      */
     public function archivosAdjuntos()
     {
-        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\ArchivosAdjunto::class, 'id', 'mascota_id');
     }
     
     /**
@@ -96,7 +96,7 @@ class Mascota extends Model
      */
     public function citas()
     {
-        return $this->hasMany(\App\Models\Cita::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Cita::class, 'id', 'mascota_id');
     }
     
     /**
@@ -104,7 +104,7 @@ class Mascota extends Model
      */
     public function historialExamenes()
     {
-        return $this->hasMany(\App\Models\HistorialExamene::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\HistorialExamene::class, 'id', 'mascota_id');
     }
     
     /**
@@ -112,7 +112,7 @@ class Mascota extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'mascota_id');
     }
     
     /**
@@ -120,7 +120,7 @@ class Mascota extends Model
      */
     public function seguimientos()
     {
-        return $this->hasMany(\App\Models\Seguimiento::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Seguimiento::class, 'id', 'mascota_id');
     }
     
     /**
@@ -128,7 +128,7 @@ class Mascota extends Model
      */
     public function vacunas()
     {
-        return $this->hasMany(\App\Models\Vacuna::class, 'ID', 'mascota_id');
+        return $this->hasMany(\App\Models\Vacuna::class, 'id', 'mascota_id');
     }
     
 }

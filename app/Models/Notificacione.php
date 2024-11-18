@@ -40,7 +40,7 @@ class Notificacione extends Model
      */
     public function veterinario()
     {
-        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'ID');
+        return $this->belongsTo(\App\Models\Veterinario::class, 'veterinario_id', 'id');
     }
     
     /**
@@ -56,7 +56,7 @@ class Notificacione extends Model
      */
     public function plantillaNotificacions()
     {
-        return $this->hasMany(\App\Models\PlantillaNotificacion::class, 'ID', 'notificacion_id');
+        return $this->hasMany(\App\Models\PlantillaNotificacion::class, 'id', 'notificacion_id');
     }
     
 }

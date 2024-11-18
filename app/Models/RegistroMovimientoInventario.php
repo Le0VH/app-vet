@@ -39,7 +39,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function inventarioInsumo()
     {
-        return $this->belongsTo(\App\Models\InventarioInsumo::class, 'inventario_id', 'ID');
+        return $this->belongsTo(\App\Models\InventarioInsumo::class, 'inventario_id', 'id');
     }
     
     /**
@@ -47,7 +47,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function historialDesparacitaciones()
     {
-        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\HistorialDesparacitacione::class, 'id', 'movimiento_id');
     }
     
     /**
@@ -55,7 +55,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function historialMedicos()
     {
-        return $this->hasMany(\App\Models\HistorialMedico::class, 'ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'movimiento_id');
     }
     
     /**
@@ -63,7 +63,7 @@ class RegistroMovimientoInventario extends Model
      */
     public function tratamientos()
     {
-        return $this->hasMany(\App\Models\Tratamiento::class, 'ID', 'movimiento_id');
+        return $this->hasMany(\App\Models\Tratamiento::class, 'id', 'movimiento_id');
     }
     
 }
