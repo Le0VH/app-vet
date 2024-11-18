@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Vacuna extends Model
 {
-    
+    public $timestamps = false;
     protected $perPage = 20;
 
     /**
