@@ -31,10 +31,12 @@
                     <?php
                     $rol = Auth::user()->rol;
                         
-                    if ($rol == 1 or 2): 
+                    if ($rol == 1 || $rol == 2): 
                     ?>
-                    <input type="search" id="Mascotabusqueda" name="buscMascota" placeholder="Ingrese Rut..."/>
-                    <button>Buscar</button>
+                    <form action="" method="GET">
+                        <input type="search" id="Mascotabusqueda" name="buscMascota" placeholder="Ingrese Rut..."/>
+                        <button type="submit">Buscar</button>
+                      </form>                      
                 <?php
                     endif;
                 ?>

@@ -9,6 +9,8 @@ use App\Http\Requests\MascotaRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class MascotaController extends Controller
 {
@@ -36,6 +38,7 @@ class MascotaController extends Controller
         return view('mascota.index', compact('mascotas'))
             ->with('i', ($request->input('page', 1) - 1) * $mascotas->perPage());
     }
+    
 
     /**
      * Show the form for creating a new resource.

@@ -57,7 +57,7 @@ class Logincontroller extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect(route('Iniciar_Sesion'));
+        return redirect(route('Home'));
 
 
     }

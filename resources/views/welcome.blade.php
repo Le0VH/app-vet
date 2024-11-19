@@ -22,19 +22,27 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Full Silider Bs.4.1.1 by Luckmoshy</a>
+    <a class="navbar-brand" href="{{route('Home')}}">
+      <img src="https://i.ibb.co/4sY4kYv/Juso-Pets-Logo.png" 
+           alt="Logo" 
+           style="height: 100px;">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="{{route('Home')}}">Home
                 <span class="sr-only">(current)</span>
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('Iniciar_Sesion')}}">login</a>
+          @if(Auth::check())
+            <a class="nav-link" href="{{ route('actualizarperfil') }}">{{ Auth::user()->name }}</a>
+          @else
+            <a class="nav-link" href="{{ route('Iniciar_Sesion') }}">Login</a>
+          @endif
         </li>
         <li class="nav-item">
 
@@ -55,21 +63,21 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('https://3.bp.blogspot.com/-_7vaKiNZPXk/XCWoF-0xj7I/AAAAAAAAAMk/Bx7Ne5WLEvINHPDoG1jwY6rGO2d62pprwCKgBGAs/s1600/ux-design.jpeg')">
+      <div class="carousel-item active" style="background-image: url('https://t3.ftcdn.net/jpg/04/81/85/46/360_F_481854656_gHGTnBscKXpFEgVTwAT4DL4NXXNhDKU9.jpg')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">First Slide</h2>
           <p class="lead">This is a description for the first slide.</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg')">
+      <div class="carousel-item" style="background-image: url('https://www.animalcareunlimited.com/blog/wp-content/uploads/2022/12/iStock-1346380406-1-2000x1065.jpg')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Second Slide</h2>
           <p class="lead">This is a description for the second slide.</p>
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://1.bp.blogspot.com/-GWl5F8P4t-8/XB4_VV4VE5I/AAAAAAAAAKE/SmHRzas-LpMpDBoLn6otR9AznVsr6L7OgCEwYBhgL/s1600/t1larg.africa.cnn.jpg')">
+      <div class="carousel-item" style="background-image: url('https://hvhct.com/wp-content/uploads/2020/04/AdobeStock_75588923-scaled.jpeg')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Third Slide</h2>
           <p class="lead">This is a description for the third slide.</p>
@@ -90,8 +98,8 @@
 <!-- Page Content -->
 <section class="py-5 text-center">
       <div class="container"> 
-        <h2 class="text-center">Luckmoshy`s Services</h2>
-        <p class="text-muted mb-5 text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+        <h2 class="text-center">Jūsō Pets</h2>
+        <p class="text-muted mb-5 text-center">Buscamos ser el mejor compañero para cuidar a tu mascota!</p>
         <div class="row">
           <div class="col-sm-6 col-lg-4 mb-3">
             <svg class="lnr text-primary services-icon">
@@ -145,9 +153,9 @@
 
    <div class="card-columns">
   <div class="card shadow border-0">
-    <img class="card-img-top" src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg" alt="Card image cap">
+    <img class="card-img-top" src="https://www.fmdos.cl/wp-content/uploads/2021/04/Vacunacion-animal.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title that wraps to a new line</h5>
+      <h5 class="card-title">Nuevo proceso de vacunacion para mascotas</h5>
       <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
   </div>
@@ -162,11 +170,11 @@
     </blockquote>
   </div>
   <div class="card shadow border-0">
-    <img class="card-img-top" src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg" alt="Card image cap">
+    <img class="card-img-top" src="https://purina.cl/sites/default/files/styles/webp/public/2022-10/purina-brand-guia-de-alimentacion-para-tu-perro.jpg.webp?itok=jG6n9yuj" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Cuales son los mejores alimentos para tu mascota?</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <p class="card-text"><small class="text-muted">Actualizado hace 3 mins</small></p>
     </div>
   </div>
   <div class="card shadow border-0 bg-primary text-white text-center p-3">
@@ -187,14 +195,14 @@
     </div>
   </div>
   <div class="card shadow border-0">
-    <img class="card-img" src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg" alt="Card image">
+    <img class="card-img" src="https://img.freepik.com/foto-gratis/lavar-perro-mascota-casa_23-2149627259.jpg" alt="Card image">
   </div>
   <div class="card shadow border-0 p-3 text-right">
     <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <p>Bañarlo más seguido de lo necesario podría eliminar esta barrera protectora, dejando a tu perro vulnerable a alergias y otros problemas de piel.</p>
       <footer class="blockquote-footer">
         <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          Veterinario Pablo Gatica en <cite title="Source Title">Vet Magazine.</cite>
         </small>
       </footer>
     </blockquote>
@@ -214,7 +222,7 @@
    <!-- Header -->
 <header class="bg-primary text-center py-5 mb-4">
   <div class="container">
-    <h1 class="font-weight-light text-white">Meet the Team</h1>
+    <h1 class="font-weight-light text-white">El equipo.</h1>
   </div>
 </header>
 
@@ -236,8 +244,8 @@
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Pablo Gatica</h5>
+          <div class="card-text text-black-50">Project Owner</div>
         </div>
       </div>
     </div>
@@ -246,8 +254,8 @@
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Leonardo Vásquez</h5>
+          <div class="card-text text-black-50">Desarrollador</div>
         </div>
       </div>
     </div>
@@ -273,24 +281,12 @@
           <svg class="lnr text-muted quote-icon pull-left">
             <use xlink:href="#lnr-heart">                                       
           </use></svg>
-          <p class="mb-0">Keep in touch with me for more Theme  right here!</p>
-          <footer class="blockquote-footer">Luckmoshy Designing
-            <cite title="Source Title">Webublog @</cite>
+          <p class="mb-0">Siguenos en nuestras redes sociales!</p>
+          <footer class="blockquote-footer">Jūsō Pets
+            <cite title="Source Title">@JusoPets</cite>
           </footer>
         </blockquote>
         </div>
-        <div class="col-md-4">
-        <a class="flot-right btn btn-white border-0 rounded shadow post-pager-link p-0 next ml-4" href="">
-               <span class="d-flex h-100">
-              <span class="p-3 d-flex flex-column justify-content-center w-100">
-            <div class="indicator mb-1 text-uppercase text-muted">webublog<i class="fa fa-bars ml-2"></i></div>
-                 <p class="f-13">See next awesome themes</p>
-                     </span>
-               <span class="bg-primary p-2 d-flex align-items-center text-white">
-               <i class="fa fa-arrow-circle-right"></i>
-          </span>
-         </span>
-</a></div>
         </div>
         
       </div>

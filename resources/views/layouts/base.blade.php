@@ -34,15 +34,23 @@
         <a class="nav-link" href="{{route('Home')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        @if(Auth::check())
+          <a class="nav-link active" href="{{ route('actualizarperfil') }}">{{ Auth::user()->name }}</a>
+        @else
+          <a class="nav-link active" href="{{ route('Iniciar_Sesion') }}">Login</a>
+        @endif
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link active" href="{{ route('logout') }}">Salir</a>
       </li>
     </ul>
 
     <div class="mx-auto">
-	  	<a href="#" class="navbar-brand">Navbar</a>
+        <a class="navbar-brand" href="{{route('actualizarperfil')}}">
+            <img src="https://i.ibb.co/4sY4kYv/Juso-Pets-Logo.png" 
+                 alt="Logo" 
+                 style="height: 100px;">
+          </a>
 	</div>
     
     <form class="form-inline my-2 my-lg-0">
