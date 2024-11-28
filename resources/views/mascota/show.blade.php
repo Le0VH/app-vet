@@ -14,7 +14,7 @@
                             <span class="card-title">{{ __('Show') }} Mascota</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('mascotas.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('mascotas.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
@@ -68,6 +68,15 @@
                                     <strong>Fecha Castracion:</strong>
                                     {{ $mascota->Fecha_Castracion }}
                                 </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Id Dueño:</strong>
+                                    {{ $mascota->id_dueño }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Veterinario Id:</strong>
+                                    {{ $mascota->veterinario_id }}
+                                </div>
+
                     </div>
                 </div>
             </div>

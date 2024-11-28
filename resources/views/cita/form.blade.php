@@ -1,4 +1,11 @@
 <div class="row padding-1 p-1">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <script src='fullcalendar/dist/index.global.js'></script>
+    <script src='fullcalendar/core/locales/es.global.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='es.global.js'></script>
+    <script src="{{ asset('assets/Scripts.js') }}"></script>
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
@@ -51,9 +58,62 @@
             <input type="text" name="seguimiento_id" class="form-control @error('seguimiento_id') is-invalid @enderror" value="{{ old('seguimiento_id', $cita?->seguimiento_id) }}" id="seguimiento_id" placeholder="Seguimiento Id">
             {!! $errors->first('seguimiento_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        <div id="calendar"></div>
 
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Evento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario o contenido del modal -->
+          <form id="event-form">
+            <input type="hidden" id="selected-date" name="selected-date">
+            <div class="mb-3">
+              <label for="event-name" class="form-label">Nombre del Evento</label>
+              <input type="text" class="form-control" id="event-name" name="event-name">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
-    </div>
-</div>
+  </div>
+
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'es',
+        selectable: true,
+        headerToolbar: { 
+            left: 'prev,next today', 
+            center: 'title', 
+            right: 'dayGridMonth,timeGridDay' 
+        },
+        buttonText: { 
+            today: 'Hoy',
+            month: 'Mes',
+            week: 'Semana',
+            day: 'Día',
+            list: 'Lista'
+        },
+        dateClick: function (info) {
+            // Asigna la fecha seleccionada al campo oculto del formulario
+            $('#selected-date').val(info.dateStr);
+            
+            // Abre el modal con Bootstrap
+            $('#exampleModal').modal('show');
+
+            // Log de la información del día seleccionado
+            console.log(info);
+        }
+    });
+    calendar.render();
+});
+</script>

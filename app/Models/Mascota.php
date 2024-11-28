@@ -21,12 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Castracion
  * @property $Fecha_Castracion
  * @property $id_dueño
- * @property $historial_medico_id
- * @property $desparacitaciones_id
  * @property $veterinario_id
  *
- * @property HistorialMedico $historialMedico
- * @property HistorialDesparacitacione $historialDesparacitacione
  * @property Veterinario $veterinario
  * @property User $user
  * @property ArchivosAdjunto[] $archivosAdjuntos
@@ -40,7 +36,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Mascota extends Model
 {
-    public $timestamps = false;
+    
     protected $perPage = 20;
 
     /**
@@ -48,25 +44,9 @@ class Mascota extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nombre_mascota', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'id_dueño', 'historial_medico_id', 'desparacitaciones_id', 'veterinario_id'];
+    protected $fillable = ['nombre_mascota', 'Especie', 'Raza', 'Tipo_Pelaje', 'Color_Pelaje', 'Fecha_Nacimiento', 'Fecha_Adopcion', 'Peso', 'Tipificacion_Sangre', 'Numero_Chip', 'Castracion', 'Fecha_Castracion', 'id_dueño', 'veterinario_id'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function historialMedico()
-    {
-        return $this->belongsTo(\App\Models\HistorialMedico::class, 'historial_medico_id', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function historialDesparacitacione()
-    {
-        return $this->belongsTo(\App\Models\HistorialDesparacitacione::class, 'desparacitaciones_id', 'id');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

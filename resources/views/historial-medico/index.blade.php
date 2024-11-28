@@ -55,7 +55,7 @@
                                     @foreach ($historialMedicos as $historialMedico)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+                                        <td >{{ $historialMedico->mascota->id ?? ''}}</td>     
 										<td >{{ $historialMedico->Fecha }}</td>
 										<td >{{ $historialMedico->Descripcion }}</td>
 										<td >{{ $historialMedico->id_atencion }}</td>

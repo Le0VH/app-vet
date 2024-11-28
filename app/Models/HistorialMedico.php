@@ -30,13 +30,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property HistorialDesparacitacione $historialDesparacitacione
  * @property ArchivosAdjunto[] $archivosAdjuntos
  * @property Cita[] $citas
- * @property Mascota[] $mascotas
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class HistorialMedico extends Model
 {
-    
+    public $timestamps = false;
     protected $perPage = 20;
 
     /**
@@ -125,14 +124,6 @@ class HistorialMedico extends Model
     public function citas()
     {
         return $this->hasMany(\App\Models\Cita::class, 'id', 'historial_med_id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function mascotas()
-    {
-        return $this->hasMany(\App\Models\Mascota::class, 'id', 'historial_medico_id');
     }
     
 }

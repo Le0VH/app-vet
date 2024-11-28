@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property RegistroMovimientoInventario $registroMovimientoInventario
  * @property Seguimiento $seguimiento
  * @property HistorialMedico[] $historialMedicos
- * @property Mascota[] $mascotas
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -55,14 +54,6 @@ class HistorialDesparacitacione extends Model
     public function historialMedicos()
     {
         return $this->hasMany(\App\Models\HistorialMedico::class, 'id', 'desparacitacion_id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function mascotas()
-    {
-        return $this->hasMany(\App\Models\Mascota::class, 'id', 'desparacitaciones_id');
     }
     
 }

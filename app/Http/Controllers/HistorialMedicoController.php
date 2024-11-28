@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\HistorialMedicoRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Mascota;
 
 class HistorialMedicoController extends Controller
 {

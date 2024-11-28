@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('template_title')
     Mascotas
@@ -15,6 +15,7 @@
                             <span id="card_title">
                                 {{ __('Mascotas') }}
                             </span>
+
                              <div class="float-right">
                                 <a href="{{ route('mascotas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
@@ -27,19 +28,6 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
-                    <?php
-                    $rol = Auth::user()->rol;
-                        
-                    if ($rol == 1 || $rol == 2): 
-                    ?>
-                    <form action="" method="GET">
-                        <input type="search" id="Mascotabusqueda" name="buscMascota" placeholder="Ingrese Rut..."/>
-                        <button type="submit">Buscar</button>
-                      </form>                      
-                <?php
-                    endif;
-                ?>
 
                     <div class="card-body bg-white">
                         <div class="table-responsive">
@@ -60,6 +48,9 @@
 									<th >Numero Chip</th>
 									<th >Castracion</th>
 									<th >Fecha Castracion</th>
+									<th >Id Dueño</th>
+									<th >Veterinario Id</th>
+
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -80,12 +71,13 @@
 										<td >{{ $mascota->Numero_Chip }}</td>
 										<td >{{ $mascota->Castracion }}</td>
 										<td >{{ $mascota->Fecha_Castracion }}</td>
+										<td >{{ $mascota->id_dueño }}</td>
+										<td >{{ $mascota->veterinario_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('mascotas.destroy', $mascota->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('mascotas.show', $mascota->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('mascotas.edit', $mascota->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('historial-medicos.index', $mascota->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Historial Medico') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
