@@ -36,7 +36,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Mascota extends Model
 {
-    
+    public $timestamps = false;
     protected $perPage = 20;
 
     /**
