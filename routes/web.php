@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\Logincontroller;
+use App\Http\Controllers\CitasController;
 //use App\Http\Controllers\ArchivosAdjuntoController;
 //use App\Http\Controllers\CitaController;
 //use App\Http\Controllers\HistorialDesparacitacioneController;
@@ -53,3 +54,23 @@ Route::resource('seguimientos', App\Http\Controllers\SeguimientoController::clas
 Route::resource('tratamientos', App\Http\Controllers\TratamientoController::class);
 Route::resource('vacunas', App\Http\Controllers\VacunaController::class);
 Route::resource('veterinarios', App\Http\Controllers\VeterinarioController::class);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/citastest', [CitasController::class, 'index'])->name('citas.index');
+    Route::get('/citas/getAll', [CitasController::class, 'getAll'])->name('citas.getAll');
+    Route::post('/citas/store', [CitasController::class, 'store'])->name('citas.store');
+    Route::delete('/citas/{id}', [CitasController::class, 'destroy'])->name('citas.destroy');
+});
+
+Route::get('calendar/index', [App\Http\Controllers\CalendarController::class, 'index'])->name('calendar.index');
+Route::post('calendar', [App\Http\Controllers\CalendarController::class, 'store'])->name('calendar.store');
+Route::patch('calendar/update/{id}', [App\Http\Controllers\CalendarController::class, 'update'])->name('calendar.update');
+Route::delete('calendar/destroy/{id}', [App\Http\Controllers\CalendarController::class, 'destroy'])->name('calendar.destroy');
+
+Route::get('books', [App\Http\Controllers\BookController::class, 'index'])->name('books.index');
+Route::post('books', [App\Http\Controllers\BookController::class, 'store'])->name('books.store');
+
+Route::get('/export-db', function() {
+    return "Exporting";
+});

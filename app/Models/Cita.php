@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Tipo_De_Pago
  * @property $mascota_id
  * @property $historial_med_id
- * @property $usuario_id
+ * @property $id_user
  * @property $veterinario_id
  * @property $seguimiento_id
  *
@@ -39,7 +39,7 @@ class Cita extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Fecha_Cita', 'Hora_Cita', 'Motivo_Cita', 'Estado_Cita', 'Tipo_De_Pago', 'mascota_id', 'historial_med_id', 'usuario_id', 'veterinario_id', 'seguimiento_id'];
+    protected $fillable = ['Fecha_Cita', 'Hora_Cita', 'Motivo_Cita', 'Estado_Cita', 'Tipo_De_Pago', 'mascota_id', 'historial_med_id', 'id_user', 'veterinario_id', 'seguimiento_id'];
 
 
     /**
@@ -79,7 +79,7 @@ class Cita extends Model
      */
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class, 'usuario_id', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'id_user', 'id');
     }
     
     /**

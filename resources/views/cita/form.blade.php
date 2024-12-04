@@ -61,9 +61,9 @@
                 {!! $errors->first('historial_med_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
             </div>
             <div class="form-group mb-2 mb20">
-                <label for="usuario_id" class="form-label">{{ __('Usuario Id') }}</label>
-                <input type="text" name="usuario_id" class="form-control @error('usuario_id') is-invalid @enderror" value="{{ old('usuario_id', $cita?->usuario_id) }}" id="usuario_id" placeholder="Usuario Id">
-                {!! $errors->first('usuario_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+                <label for="id_user" class="form-label">{{ __('id user') }}</label>
+                <input type="text" name="id_user" class="form-control @error('id_user') is-invalid @enderror" value="{{ old('id_user', $cita?->usuario_id) }}" id="id_user" placeholder="id_user">
+                {!! $errors->first('id_user', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
             </div>
             <div class="form-group mb-2 mb20">
                 <label for="veterinario_id" class="form-label">{{ __('Veterinario Id') }}</label>
